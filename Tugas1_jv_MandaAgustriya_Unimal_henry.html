@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+</head>
+<body>
+    <table border="1">
+        <script language="javascript">
+
+            let pegawai = "Ridwan";
+            let jabatan = "Manager";
+            let status = "Menikah";
+            let gapok ="Gaji Pokok"
+        
+            if(jabatan=='Manager'){
+                gapok= 15000000;
+            }
+            else if(jabatan=='Asisten Manager'){
+                gapok= 10000000;
+            }
+			else if(jabatan=='Staf'){
+                gapok= 5000000;
+            }
+            else{
+                gapok=0;
+            }
+        
+            let jmtunjangan=0.15*gapok;
+            let bpjs=0.1*gapok;
+            let jmtunjangank=(status == 'Menikah') ? 0.2*gapok :0;
+            let tot= gapok+jmtunjangank+jmtunjangank+bpjs;
+            </script>
+        
+<tbody>
+<th>Data pegawai</th>
+<th>Jumlah</th>
+<script>
+	document.write("Data Pegawai"+
+    "</br>pegawai= "+pegawai +
+    "</br>jabatan= "+ jabatan +
+	"</br>status= "+status +
+	"</br>gapok= "+gapok 
+	);
+</script>
+<tr>
+    <td>
+        <script>
+             document.write("Gaji Pokok");
+            </script>
+    </td>
+    <td>
+        <script>
+             document.write(gapok);
+            </script>
+    </td>
+</tr>
+<tr>
+    <td>
+        <script>
+             document.write("Tunjangan");
+            </script>
+    </td>
+    <td>
+        <script>
+             document.write(jmtunjangan);
+            </script>
+    </td> 
+</tr>
+
+<tr>
+    <td>
+        <script>
+             document.write("BPJS");
+            </script>
+    </td>
+    <td>
+        <script>
+             document.write(bpjs);
+            </script>
+    </td>
+</tr>
+
+<td>
+    <script>
+         document.write("Tunjangan Keluarga");
+        </script>
+</td>
+<td>
+    <script>
+         document.write(jmtunjangank);
+        </script>
+</td>
+
+<tr>
+<td>
+    <script>
+         document.write("Total Gaji");
+        </script>
+</td>
+<td>
+    <script>
+         document.write(tot);
+        </script>
+</td>
+</tr>
+</tbody>
+    <tfoot>
+       
+       
+    </tfoot>
+    </table>
+</body>
+</html>
