@@ -52,7 +52,7 @@
         let tunjab = 0.2*gapok;
         let tungkes =0.1*gapok;
         let gaji_kotor= gapok+tunjab+tungkes;
-        let zakat_profesi = (agama == 'muslim' && gaji_kotor>='7000000')? 0.25*gaji_kotor :0 ;
+        let zakat_profesi = (agama == 'muslim' && gaji_kotor>='7000000')? 0.025*gaji_kotor :0 ;
         
         let teke_home_pay = gaji_kotor-zakat_profesi;
         document.write(`<tr bgcolor="${warna}">
