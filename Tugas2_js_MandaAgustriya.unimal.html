@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 align="center">Data Pegawai</h2> 
+        <table align="center" cellpadding="10" width="40%">
+            <thead>
+              <tr bg color="pink">
+                <th>NO</th>
+                <th>NAMA</th>
+                <th>jabatan</th> 
+                <th>AGAMA</th>
+                <th>GAJI POKOK</th>
+                <th>TUNJANGAN JABATAN</th>
+                <th>TUNJANGAN KESEHATAN</th>
+                <th>GAJI KOTOR</th>
+                <th>ZAKAT PROFESI</th>
+                <th>TAKE HOME PAY</th>
+              </tr>
+            </thead>
+           <tbody>
+                <script language="javascript">
+                  var no;
+                  var warna;
+                  var pegawai;
+                  let jabatan;
+                  let agama;
+                  let gapok;
+                  let gaji_kotor;
+                  let zakat_profesi;
+
+        for (no = 1; no <=100; no++){
+        if (no >=1 && no <=25) jabatan='manager';
+        else if(no >=26 && no<=50) jabatan='asistenmanager';
+        else if(no >=51 && no<=75) jabatan='supervisor';
+        else if(no >=76 && no<=100) jabatan='staff';
+        else jabatan="";
+        switch (jabatan){
+            case 'manager': gapok = 15000000;
+                break;
+            case 'asistenmanager' : gapok = 10000000;
+                break;
+            case 'supervisor' : gapok = 7000000;
+                break;
+            case 'staff' : gapok = 4000000;
+                break;
+            default:gapok;
+                break;
+        }
+        warna = (no % 2 == 1) ? 'yellow' : 'aqua';
+        agama = (no % 2 == 1) ? 'muslim' : 'nonmuslim';
+        let tunjab = 0.2*gapok;
+        let tungkes =0.1*gapok;
+        let gaji_kotor= gapok+tunjab+tungkes;
+        let zakat_profesi = (agama == 'muslim' && gaji_kotor>='7000000')? 0.25*gaji_kotor :0 ;
+        
+        let teke_home_pay = gaji_kotor-zakat_profesi;
+        document.write(`<tr bgcolor="${warna}">
+                 <td>${no}</td>
+                 <td>pegawai${no}</td>
+                 <td>${jabatan}</td>
+                 <td>${agama}</td>
+                 <td>${gapok}</td>
+                 <td>${tunjab}</td>
+                 <td>${tungkes}</td>
+                 <td>${gaji_kotor}</td>
+                 <td>${zakat_profesi}</td>
+                 <td>${teke_home_pay}</td>
+                </tr>`);
+              }
+    </script>
+</tbody>
