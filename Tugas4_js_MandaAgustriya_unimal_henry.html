@@ -59,19 +59,19 @@ Buatlah Aplikasi Sederhana untuk menghitung pembelian barang berdasarkan kurs va
 Hasilnya ditempatkan pada paragraf yang ber-id-kan isi
 */
 function konversiKurs(){
-    let form = document.getElementById('frm');
+     let forms = document.getElementById('frm');
     let pembeli = forms.nama.value; 
-    let brg = form.barang.value; 
-    let hrg = form.harga.value; 
-    let jml = form.jumlah.value; 
-    let valas = form.valas.value;
-    let total =valas/(hrg*jml);
+    let brg = forms.barang.value; 
+    let hrg = forms.harga.value; 
+    let jml = forms.jumlah.value; 
+    let vls = forms.vls.value;
+    let total = hrg * jml * vls;
     let data = `Data pembelian: 
     <br/>Nama pembeli: ${pembeli}
     <br/>Nama barang: ${brg}
     <br/>Harga barang: ${hrg}
     <br/>Jumlah barang: ${jml}
-    <br/>Valuta Asing: ${valas}
+    <br/>Valuta Asing: ${vls}
     <br/>Total bayar: ${total}
     `;
 
