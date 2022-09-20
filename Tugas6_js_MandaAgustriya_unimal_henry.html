@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+    <script>
+        let no = 1; 
+        class Gempa{
+            constructor(lokasi, skala){
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+        
+            getDampak(){
+                if(this.skala <= 2 ) this.dampak = 'tidak terasa';
+                else if(this.skala > 2 && this.skala <=4 ) this.dampak = 'bangunan retak-retak';
+                else if(this.skala > 4 && this.skala <= 6) this.dampak = 'bangunan roboh';
+                else if(this.skala >=6 ) this.dampak = 'bangunan roboh dan berpotensi tsunami';
+                else this.dampak = '';
+        
+                return this.dampak;
+            }
+    
+            infoGempa(){
+                document.write(`No: ${no++}
+                <br/>lokasi: ${this.lokasi}
+                <br/>Skala: ${this.skala}
+                <br/>Dampak: ${this.getDampak()}
+                <hr/>`);
+            }
+    
+        }
+    
+         //-------membuat object-----
+        g1 = new Gempa('Gunung kidul',4);
+        g2 = new Gempa('Nagan Raya',4);
+        g3 = new Gempa('Bener Meriah',3);
+        g4 = new Gempa('Bukit Tinggi',3);
+        g5 = new Gempa('Sipora',5);
+        g6 = new Gempa('krui',4.9);
+        g7 = new Gempa('Padang',5.1);
+        g8 = new Gempa('merauke',7,5);
+        g9 = new Gempa('painan',6.1);
+        g10 = new Gempa('Tolitoli',1.2);
+        
+        g1.infoGempa(); g2.infoGempa(); g3.infoGempa(); g4.infoGempa(); g5.infoGempa(); g6.infoGempa(); g7.infoGempa(); g8.infoGempa(); g9.infoGempa(); g10.infoGempa();
+    
+    </script>
+  </body>
+</html>
